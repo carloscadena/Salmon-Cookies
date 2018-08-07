@@ -116,7 +116,6 @@ for(var i = 0; i < 16; i++){
     seattleCenterli.textContent = 'Total: ' + centerDailyCookies;
     document.getElementById('centersales').appendChild(seattleCenterli);
   } else if(i < 6){
-    console.log('i in this loop is' + i)
     seattleCenterli.textContent = (i + 6) + 'am: ' + seattleCenter.cookiesEachHour[i] + ' cookies';
     document.getElementById('centersales').appendChild(seattleCenterli);
   } else if (i - 6 === 0){
@@ -132,7 +131,6 @@ capHill.randomAmountOfCustomers();
 var hillDailyCookies = 0;
 for(var i = 0; i < 16; i++){
   var capHillli = document.createElement('li');
-  console.log(i)
   if(i < 15){
     hillDailyCookies += capHill.cookiesEachHour[i];
   }
