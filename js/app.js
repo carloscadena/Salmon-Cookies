@@ -14,6 +14,7 @@ function randomCookiesEachHour(){
   return this.cookiesEachHour;
 }
 
+
 var firstAndPike = {
   location: '1st and Pike',
   minCustomers: 23,
@@ -85,7 +86,7 @@ for(var i = 0; i < 16; i++){
 
 seaTac.randomAmountOfCustomers();
 var seaTacDailyCookies = 0;
-for(var i = 0; i < 16; i++){
+for(i = 0; i < 16; i++){
   var seaTacli = document.createElement('li');
   if(i < 15){
     seaTacDailyCookies += seaTac.cookiesEachHour[i];
@@ -107,7 +108,7 @@ for(var i = 0; i < 16; i++){
 
 seattleCenter.randomAmountOfCustomers();
 var centerDailyCookies = 0;
-for(var i = 0; i < 16; i++){
+for(i = 0; i < 16; i++){
   var seattleCenterli = document.createElement('li');
   if(i < 15){
     centerDailyCookies += seattleCenter.cookiesEachHour[i];
@@ -129,7 +130,7 @@ for(var i = 0; i < 16; i++){
 
 capHill.randomAmountOfCustomers();
 var hillDailyCookies = 0;
-for(var i = 0; i < 16; i++){
+for(i = 0; i < 16; i++){
   var capHillli = document.createElement('li');
   if(i < 15){
     hillDailyCookies += capHill.cookiesEachHour[i];
@@ -151,7 +152,7 @@ for(var i = 0; i < 16; i++){
 
 alki.randomAmountOfCustomers();
 var alkiDailyCookies = 0;
-for(var i = 0; i < 16; i++){
+for(i = 0; i < 16; i++){
   var alkiLi = document.createElement('li');
   if (i < 15){
     alkiDailyCookies += alki.cookiesEachHour[i];
