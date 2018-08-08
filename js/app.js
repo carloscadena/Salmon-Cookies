@@ -78,3 +78,10 @@ for(var i = 0; i < 16; i++){
     document.getElementById('totalhourly').appendChild(tableData);
   }
 }
+
+var formElement = document.getElementById('newstoreform');
+formElement.addEventListener('submit', function(event){
+  event.preventDefault();
+  console.log('submitted')
+  
+})
