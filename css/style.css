@@ -3,4 +3,19 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
+  background-color: #F0BFAE;
+}
+
+th, td {
+  border: 1.5px solid #E79B82;
+}
+table {
+  background-color:rgb(245, 217, 213, 0.8);
+  margin-left:auto; 
+  margin-right:auto;
+}
+
+h1 {
+  color: #67649F;
+  text-align: center;
 }
