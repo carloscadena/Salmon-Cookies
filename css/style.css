@@ -15,7 +15,26 @@ table {
   margin-right:auto;
 }
 
-h1 {
+h1, h2 {
   color: #67649F;
   text-align: center;
+}
+
+input, label {
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+}
+
+form {
+  background-color:rgb(245, 217, 213, 0.8);
+  margin: 15px auto;
+  padding: 10px;
+  border: 1.5px solid #E79B82;
+  max-width: 35%;
+}
+
+h2 {
+  margin-top: 0px;
+  margin-bottom: 5px;
 }

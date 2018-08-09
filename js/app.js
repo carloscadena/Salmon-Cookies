@@ -29,24 +29,26 @@ var capHill = new Store('Capitol Hill', 20, 38, 2.3);
 var alki = new Store('Alki', 2, 16, 4.6);
 
 var hourlyTotals = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-function addInfo(store, htmlid){
+function addInfo(store){
+  var newRow = document.createElement('tr');
+  document.getElementById('cookietable').appendChild(newRow);
   var dailyCookies = 0;
   for(var i = 0; i < 16; i++){
     var tableData = document.createElement('td');
     if(i === 0) {
       tableData.textContent = store.location;
-      document.getElementById(htmlid).appendChild(tableData);
+      newRow.appendChild(tableData);
     }
     if(i < 15){
       hourlyTotals[i] += store.cookiesEachHour[i];
       tableData = document.createElement('td');
       dailyCookies += store.cookiesEachHour[i];
       tableData.textContent = store.cookiesEachHour[i];
-      document.getElementById(htmlid).appendChild(tableData);
+      newRow.appendChild(tableData);
     }
     if (i >= 15){
       tableData.textContent = dailyCookies;
-      document.getElementById(htmlid).appendChild(tableData);
+      newRow.appendChild(tableData);
     }
   }
 }
@@ -56,32 +58,42 @@ seaTac.randomAmountOfCustomers();
 seattleCenter.randomAmountOfCustomers();
 capHill.randomAmountOfCustomers();
 alki.randomAmountOfCustomers();
-addInfo(firstAndPike, 'firstandpikesales');
-addInfo(seaTac, 'seatacsales');
-addInfo(seattleCenter, 'centersales');
-addInfo(capHill, 'hillsales');
-addInfo(alki, 'alkisales');
+addInfo(firstAndPike);
+addInfo(seaTac);
+addInfo(seattleCenter);
+addInfo(capHill);
+addInfo(alki);
 
-for(var i = 0; i < 16; i++){
-  var tableData = document.createElement('td');
-  if(i === 0) {
-    tableData.textContent = 'Total';
-    document.getElementById('totalhourly').appendChild(tableData);
+function calcHourlyTotals(){
+  document.getElementById('cookietable').deleteTFoot();
+  var newTfoot = document.createElement('tfoot');
+  document.getElementById('cookietable').appendChild(newTfoot);
+  for(var i = 0; i < 16; i++){
+    var tableData = document.createElement('td');
+    if(i === 0) {
+      tableData.textContent = 'Total';
+      newTfoot.appendChild(tableData);
+    }
+    if(i < 15){
+      tableData = document.createElement('td');
+      tableData.textContent = hourlyTotals[i];
+      newTfoot.appendChild(tableData);
+    }
+    if (i >= 15){
+      tableData.textContent = hourlyTotals.reduce((a, b) => a + b, 0);
+      newTfoot.appendChild(tableData);
+    }
   }
-  if(i < 15){
-    tableData = document.createElement('td');
-    tableData.textContent = hourlyTotals[i];
-    document.getElementById('totalhourly').appendChild(tableData);
-  }
-  if (i >= 15){
-    tableData.textContent = hourlyTotals.reduce((a, b) => a + b, 0);
-    document.getElementById('totalhourly').appendChild(tableData);
-  }
+
 }
+calcHourlyTotals();
 
 var formElement = document.getElementById('newstoreform');
 formElement.addEventListener('submit', function(event){
   event.preventDefault();
-  console.log('submitted')
-  
-})
+  var newStore = new Store(event.target.store.value, parseInt(event.target.mincustomers.value), parseInt(event.target.maxcustomers.value), parseFloat(event.target.avgpurchase.value));
+  newStore.randomAmountOfCustomers();
+  addInfo(newStore);
+  calcHourlyTotals();
+  document.getElementById("newstoreform").reset();
+});
