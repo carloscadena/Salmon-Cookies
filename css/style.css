@@ -1,9 +1,10 @@
 body {
   background-image: url("../img/salmon.png");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center;
+  background-repeat: repeat-x;
+  background-position: top;
+  background-size: 200px;
   background-color: #F0BFAE;
+  font-family: 'Merriweather', serif;
 }
 
 th, td {
@@ -13,6 +14,11 @@ table {
   background-color:rgb(245, 217, 213, 0.8);
   margin-left:auto; 
   margin-right:auto;
+}
+
+h1 {
+  font-size: 30px;
+  font-weight: bold; 
 }
 
 h1, h2 {
@@ -37,4 +43,82 @@ form {
 h2 {
   margin-top: 0px;
   margin-bottom: 5px;
+}
+
+#salmon {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right:auto;
+}
+
+#nav-list {
+  background-color:#36336D;
+  list-style-type: none;
+  margin: 0;
+  text-decoration: none;
+  padding: 15px;
+  text-align: center;
+}
+
+#nav-list li {
+  display: inline;
+  padding: 10px;
+  background-color: #67649F;
+  margin: auto 35px;
+  margin-top: 40px;
+
+}
+
+#italic {
+  font-style: italic;
+}
+
+#header {
+  text-align: center;
+  margin-top: 65px;
+}
+
+#slogan {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border: 5px groove #E79B82;
+}
+
+#cutter {
+  float: right;
+  max-width: 25%;
+}
+
+#gummies {
+  float: left;
+  max-width: 25%;
+
+}
+#familydiv {
+  max-width: 75%;
+  margin:auto;
+  overflow: hidden;
+  text-align: center;
+}
+
+#familydivtext {
+  padding-top: 25px;
+}
+
+#main-text {
+  margin-left: auto;
+  margin-right:auto;
+  text-align: center;
+  padding-bottom: 15px;
+}
+
+#chinook {
+  max-width: 20%;
 }
