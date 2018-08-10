@@ -95,5 +95,5 @@ formElement.addEventListener('submit', function(event){
   newStore.randomAmountOfCustomers();
   addInfo(newStore);
   calcHourlyTotals();
-  document.getElementById("newstoreform").reset();
+  document.getElementById('newstoreform').reset();
 });
